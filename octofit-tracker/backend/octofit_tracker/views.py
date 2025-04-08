@@ -6,9 +6,13 @@ from .models import User, Team, Activity, Leaderboard, Workout
 from django.http import JsonResponse
 
 def api_root(request):
+    base_url = 'https://klolage/skills-build-applications-w-copilot-agent-mode-8000.app.github.dev/'
     return JsonResponse({
-        "message": "Welcome to the OctoFit Tracker API!",
-        "url": "https://klolage/skills-build-applications-w-copilot-agent-mode-8000.app.github.dev"
+        "users": base_url + 'api/users/',
+        "teams": base_url + 'api/teams/',
+        "activities": base_url + 'api/activities/',
+        "leaderboard": base_url + 'api/leaderboard/',
+        "workouts": base_url + 'api/workouts/'
     })
 
 class UserViewSet(viewsets.ModelViewSet):
