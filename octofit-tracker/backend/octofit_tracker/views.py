@@ -6,7 +6,7 @@ from .models import User, Team, Activity, Leaderboard, Workout
 from django.http import JsonResponse
 
 def api_root(request):
-    base_url = 'https://turbo-spoon-4jqq4pv77w9wcj9qr-8000.app.github.dev'
+    base_url = 'https://turbo-spoon-4jqq4pv77w9wcj9qr-8000.app.github.dev/'
     return JsonResponse({
         "users": base_url + 'api/users/',
         "teams": base_url + 'api/teams/',
