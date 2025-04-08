@@ -3,15 +3,15 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, LeaderboardSerializer, WorkoutSerializer
 from .models import User, Team, Activity, Leaderboard, Workout
+from django.http import JsonResponse
+from django.conf import settings
+from django.urls import reverse
 
-@api_view(['GET'])
-def api_root(request, format=None):
-    return Response({
-        'users': 'http://localhost:8000/api/users/',
-        'teams': 'http://localhost:8000/api/teams/',
-        'activities': 'http://localhost:8000/api/activities/',
-        'leaderboard': 'http://localhost:8000/api/leaderboard/',
-        'workouts': 'http://localhost:8000/api/workouts/'
+def api_root(request):
+    host = request.get_host()
+    return JsonResponse({
+        "message": "Welcome to the OctoFit Tracker API!",
+        "url": f"https://{host}"
     })
 
 class UserViewSet(viewsets.ModelViewSet):

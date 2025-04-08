@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-1nbr%cylsa^o5=uq!fu=ftttt8o*6y)*#)rckt8!lzl*lg*j(1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'klolage-8000.app.github.dev']
 
 
 # Application definition
